@@ -1,3 +1,5 @@
+@import (reference) '../variables/_colors.less';
+
 *,
 ::before,
 ::after {
@@ -8,7 +10,15 @@
 }
 
 html {
+  color: var(--color-text-normal, #333);
   background-color: var(--color-background-body, #fff);
+  font-size: var(--font-size, 1rem);
+  font-family: var(--font-family);
+  line-height: var(--line-height, 1.5);
+  letter-spacing: var(--letter-spacing);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%; // Normalize 8.0.1
 }
 
 body {
@@ -40,7 +50,7 @@ pre {
 
 a,
 .anchor {
-  color: var(--color-text-link-primary);
+  color: var(--color-text-link);
   font-weight: 600;
   letter-spacing: 0;
   text-decoration: underline;
@@ -48,12 +58,12 @@ a,
 
   &:hover,
   &:focus {
-    color: var(--color-text-link-primary-hover);
+    color: var(--color-text-link-hover);
     text-decoration: underline;
   }
 
   &:active {
-    color: var(--color-text-link-primary-active);
+    color: var(--color-text-link-active);
   }
 
   &:focus {
@@ -62,16 +72,16 @@ a,
   }
 
   &.secondary {
-    color: var(--color-text-link-secondary);
-    font-weight: var(--font-weight-normal);
+    color: @color-base-navy-light;
+    font-weight: var(--font-weight);
 
     &:hover,
     &:focus {
-      color: var(--color-text-link-secondary-hover);
+      color: var(--color-text-link-hover);
     }
 
     &:active {
-      color: var(--color-text-link-secondary-active);
+      color: var(--color-text-link-active);
     }
   }
 
@@ -187,7 +197,7 @@ textarea {
   &:-ms-input-placeholder,
   &::-ms-input-placeholder,
   &::placeholder {
-    color: var(--color-text-input-placeholder, #a0aec0);
+    color: var(--color-text-inactive, #a0aec0);
   }
 }
 
@@ -231,7 +241,7 @@ ul {
 
 dt,
 dd {
-  line-height: var(--line-height-body);
+  line-height: var(--line-height);
 }
 
 dt {
@@ -353,8 +363,8 @@ img {
   margin: -1px;
   padding: 0;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   border: 0;
+  clip: rect(0, 0, 0, 0);
 }
 
 .sr-only-focusable {
