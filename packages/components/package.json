@@ -1,6 +1,6 @@
 {
   "name": "@transferwise/components",
-  "version": "25.1.1",
+  "version": "26.0.5",
   "description": "TransferWise styleguide components in react",
   "license": "Apache-2.0",
   "main": "./build/umd/polyfill/main.js",
@@ -140,7 +140,7 @@
     "@emotion/core": "^10.0.14",
     "@transferwise/formatting": "^2.1.0",
     "@transferwise/icons": "^1.0.0",
-    "@transferwise/neptune-css": "^0.13.0",
+    "@transferwise/neptune-css": "^0.13.1",
     "classnames": "^2.2.6",
     "core-js": "^3.6.4",
     "lodash.clamp": "^4.0.3",
@@ -149,30 +149,6 @@
     "react-required-if": "^1.0.3",
     "react-spring": "^8.0.27",
     "react-transition-group": "^4.2.1"
-  },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "raf/polyfill",
-      "<rootDir>/config/jest/setupTests.js"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>[/\\\\](build|build-docs|docs|node_modules|scripts)[/\\\\]"
-    ],
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "../../node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    }
   },
   "lint-staged": {
     "*.js": [

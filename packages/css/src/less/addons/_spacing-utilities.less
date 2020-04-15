@@ -1,0 +1,38 @@
+@import '../variables/_custom-media.less';
+@import '../variables/_spacing.less';
+@import '../mixins/_spacing.less';
+
+@spacing-1-mobile: 16px;
+@spacing-1-tablet: 24px;
+@spacing-1-desktop: 32px;
+
+@spacing-2-mobile: 32px;
+@spacing-2-tablet: 48px;
+@spacing-2-desktop: 64px;
+
+@spacing-3-mobile: 48px;
+@spacing-3-tablet: 72px;
+@spacing-3-desktop: 96px;
+
+.spacing(0, 0);
+.spacing(1, @space-8);
+.spacing(2, @space-16);
+.spacing(3, @space-24);
+.spacing(4, @space-32);
+.spacing(5, @space-40);
+
+.spacing-vertical(4, @space-32);
+.spacing-vertical(5, @space-40);
+
+.responsive-spacing(panel, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
+.responsive-spacing-vertical(section-1, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
+.responsive-spacing-vertical(section-2, @spacing-2-mobile, @spacing-2-tablet, @spacing-2-desktop);
+.responsive-spacing-vertical(section-3, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
+
+.responsive-spacing-vertical(section, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
+.responsive-spacing-vertical(footer, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
+
+.m-x-auto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
