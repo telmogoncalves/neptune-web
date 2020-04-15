@@ -29,10 +29,34 @@
 .responsive-spacing-vertical(section-2, @spacing-2-mobile, @spacing-2-tablet, @spacing-2-desktop);
 .responsive-spacing-vertical(section-3, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
 
-.responsive-spacing-vertical(section, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
-.responsive-spacing-vertical(footer, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
-
 .m-x-auto {
   margin-right: auto !important;
   margin-left: auto !important;
+}
+
+.section {
+  padding-top: @spacing-3-mobile;
+  padding-bottom: @spacing-3-mobile;
+
+  @media (--screen-sm) {
+    padding-top: @spacing-3-tablet;
+    padding-bottom: @spacing-3-tablet;
+  }
+
+  @media (--screen-lg) {
+    padding-top: @spacing-3-desktop;
+    padding-bottom: @spacing-3-desktop;
+  }
+}
+
+.footer {
+  padding-top: @spacing-1-mobile;
+
+  @media (--screen-sm) {
+    padding-top: @spacing-1-tablet;
+  }
+
+  @media (--screen-lg) {
+    padding-top: @spacing-1-desktop;
+  }
 }
