@@ -25,6 +25,7 @@ describe('Select', () => {
     };
     props = {
       onChange: jest.fn(),
+      onFocus: jest.fn(),
       options: [
         { value: 0, label: 'yo' },
         { value: 1, label: 'dawg' },
@@ -530,15 +531,26 @@ describe('Select', () => {
   });
 
   describe('search property', () => {
-    it('should focus input when dropdown is open', async () => {
+    it.only('should focus input when dropdown is open', async () => {
       component.setProps({ search: true });
 
       openSelect();
 
       await bustStackAndUpdate();
 
-      expect(component.find('input').prop('className')).toBe(document.activeElement.className);
-      document.activeElement.blur();
+      const searchInput = component.find('input');
+      console.log(searchInput);
+      jest.spyOn(searchInput, 'focus');
+
+      // jest.spyOn(component.instance(), 'closePopoverOnOutsideClick');
+      // const listener = component.instance().closePopoverOnOutsideClick;
+
+      //       const element = wrapper.instance().inputBox; // This is your input ref
+      // spyOn(element, 'focus');
+      // wrapper.simulate('mouseEnter', eventStub());
+      // setTimeout(() => expect(element.focus).toHaveBeenCalled(), 250);
+
+      expect(searchInput.focus).toHaveBeenCalledTimes(1);
     });
 
     it('should filter the options with the default filter function', async () => {
