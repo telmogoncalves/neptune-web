@@ -3,6 +3,91 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [26.0.5](https://github.com/transferwise/neptune-web/compare/@transferwise/components@26.0.4...@transferwise/components@26.0.5) (2020-04-09)
+
+**Note:** Version bump only for package @transferwise/components
+
+
+
+
+
+## [26.0.4](https://github.com/transferwise/neptune-web/compare/@transferwise/components@26.0.3...@transferwise/components@26.0.4) (2020-04-06)
+
+**Note:** Version bump only for package @transferwise/components
+
+
+
+
+
+## [26.0.3](https://github.com/transferwise/neptune-web/compare/@transferwise/components@26.0.2...@transferwise/components@26.0.3) (2020-04-01)
+
+
+### Bug Fixes
+
+* chipsMode Tab press create chip ([#254](https://github.com/transferwise/neptune-web/issues/254)) ([f1fc7e8](https://github.com/transferwise/neptune-web/commit/f1fc7e8dac67ce29cc64596d4b9501c396a2a1a8))
+
+
+
+
+
+## [26.0.2](https://github.com/transferwise/neptune-web/compare/@transferwise/components@26.0.1...@transferwise/components@26.0.2) (2020-03-31)
+
+
+### Bug Fixes
+
+* adjust nested selectors ([#253](https://github.com/transferwise/neptune-web/issues/253)) ([a10bbec](https://github.com/transferwise/neptune-web/commit/a10bbec6e5d69a4c1f4f3fa87acc90a192705026))
+
+
+
+
+
+## [26.0.1](https://github.com/transferwise/neptune-web/compare/@transferwise/components@26.0.0...@transferwise/components@26.0.1) (2020-03-30)
+
+
+### Bug Fixes
+
+* including missing spacer variable in modal ([#250](https://github.com/transferwise/neptune-web/issues/250)) ([66f127f](https://github.com/transferwise/neptune-web/commit/66f127f4d70d2c473fabdfad8073e60fed4ffc36))
+
+
+
+
+
+# [26.0.0](https://github.com/transferwise/neptune-web/compare/@transferwise/components@25.3.0...@transferwise/components@26.0.0) (2020-03-30)
+
+
+* refactor!: name space Select styles to prevent leaks (#235) ([96a6b4e](https://github.com/transferwise/neptune-web/commit/96a6b4e2fd19d927716b53a171a786d32631709b)), closes [#235](https://github.com/transferwise/neptune-web/issues/235)
+
+
+### BREAKING CHANGES
+
+* Prevent Select component styling from leaking into the global scope
+
+
+
+
+
+# [25.3.0](https://github.com/transferwise/neptune-web/compare/@transferwise/components@25.2.0...@transferwise/components@25.3.0) (2020-03-26)
+
+
+### Features
+
+* **backbutton:** accept node label ([#234](https://github.com/transferwise/neptune-web/issues/234)) ([2a6a40a](https://github.com/transferwise/neptune-web/commit/2a6a40a3ee962999fc5038a6bfb87310bbb66389))
+
+
+
+
+
+# [25.2.0](https://github.com/transferwise/neptune-web/compare/@transferwise/components@25.1.1...@transferwise/components@25.2.0) (2020-03-25)
+
+
+### Features
+
+* **stepper:** accept node as label ([#213](https://github.com/transferwise/neptune-web/issues/213)) ([c0acc6c](https://github.com/transferwise/neptune-web/commit/c0acc6c273001e2e6927dfc7c1ede7f18fc77180))
+
+
+
+
+
 ## [25.1.1](https://github.com/transferwise/neptune-web/compare/@transferwise/components@25.1.0...@transferwise/components@25.1.1) (2020-03-20)
 
 

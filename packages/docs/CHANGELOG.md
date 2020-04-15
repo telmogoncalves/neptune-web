@@ -3,6 +3,70 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.16](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.15...@transferwise/neptune-docs@3.0.16) (2020-04-09)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.15](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.14...@transferwise/neptune-docs@3.0.15) (2020-04-06)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.14](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.13...@transferwise/neptune-docs@3.0.14) (2020-04-01)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.13](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.12...@transferwise/neptune-docs@3.0.13) (2020-03-31)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.12](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.11...@transferwise/neptune-docs@3.0.12) (2020-03-30)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.11](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.10...@transferwise/neptune-docs@3.0.11) (2020-03-30)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.10](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.9...@transferwise/neptune-docs@3.0.10) (2020-03-26)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
+## [3.0.9](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.8...@transferwise/neptune-docs@3.0.9) (2020-03-25)
+
+**Note:** Version bump only for package @transferwise/neptune-docs
+
+
+
+
+
 ## [3.0.8](https://github.com/transferwise/neptune-web/compare/@transferwise/neptune-docs@3.0.7...@transferwise/neptune-docs@3.0.8) (2020-03-20)
 
 **Note:** Version bump only for package @transferwise/neptune-docs
