@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[50],{Mmvk:function(n,w,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/tokens/Spacing",function(){return o("PUgC")}])}},[["Mmvk",0,1]]]);
