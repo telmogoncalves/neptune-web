@@ -1,18 +1,10 @@
-@import '../variables/_custom-media.less';
-@import '../variables/_spacing.less';
+@import (reference) '../variables/_spacing.less';
 @import '../mixins/_spacing.less';
 
-@spacing-1-mobile: 16px;
-@spacing-1-tablet: 24px;
-@spacing-1-desktop: 32px;
-
-@spacing-2-mobile: 32px;
-@spacing-2-tablet: 48px;
-@spacing-2-desktop: 64px;
-
-@spacing-3-mobile: 48px;
-@spacing-3-tablet: 72px;
-@spacing-3-desktop: 96px;
+// These spacing variables that are only used here
+@space-64: 64px;
+@space-72: 72px;
+@space-96: 96px;
 
 .spacing(0, 0);
 .spacing(1, @space-8);
@@ -24,10 +16,10 @@
 .spacing-vertical(4, @space-32);
 .spacing-vertical(5, @space-40);
 
-.responsive-spacing(panel, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
-.responsive-spacing-vertical(section-1, @spacing-1-mobile, @spacing-1-tablet, @spacing-1-desktop);
-.responsive-spacing-vertical(section-2, @spacing-2-mobile, @spacing-2-tablet, @spacing-2-desktop);
-.responsive-spacing-vertical(section-3, @spacing-3-mobile, @spacing-3-tablet, @spacing-3-desktop);
+.responsive-spacing(panel, @space-16, @space-24, @space-32);
+.responsive-spacing-vertical(section-1, @space-16, @space-24, @space-32);
+.responsive-spacing-vertical(section-2, @space-32, @space-48, @space-64);
+.responsive-spacing-vertical(section-3, @space-48, @space-72, @space-96);
 
 .m-x-auto {
   margin-right: auto !important;
@@ -35,28 +27,16 @@
 }
 
 .section {
-  padding-top: @spacing-3-mobile;
-  padding-bottom: @spacing-3-mobile;
+  padding-top: @space-48;
+  padding-bottom: @space-48;
 
   @media (--screen-sm) {
-    padding-top: @spacing-3-tablet;
-    padding-bottom: @spacing-3-tablet;
+    padding-top: @space-72;
+    padding-bottom: @space-72;
   }
 
   @media (--screen-lg) {
-    padding-top: @spacing-3-desktop;
-    padding-bottom: @spacing-3-desktop;
-  }
-}
-
-.footer {
-  padding-top: @spacing-1-mobile;
-
-  @media (--screen-sm) {
-    padding-top: @spacing-1-tablet;
-  }
-
-  @media (--screen-lg) {
-    padding-top: @spacing-1-desktop;
+    padding-top: @space-96;
+    padding-bottom: @space-96;
   }
 }
