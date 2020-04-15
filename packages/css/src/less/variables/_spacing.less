@@ -1,13 +1,22 @@
-:root {
-  --space-4: 4px;
-  --space-8: 8px;
-  --space-12: 12px;
-  --space-16: 16px;
-  --space-24: 24px;
-  --space-32: 32px;
-  --space-40: 40px;
-  --space-48: 48px;
+// LESS variables for base spacing for mixin purposes.
 
-  // Depracated. Use the semantic spacing classes above.
-  --spacer: 8px;
+@space-4: 4px;
+@space-8: 8px;
+@space-12: 12px;
+@space-16: 16px;
+@space-24: 24px;
+@space-32: 32px;
+@space-40: 40px;
+@space-48: 48px;
+
+:root {
+  --spacer: @space-8;
+  --space-4: @space-4;
+  --space-8: @space-8;
+  --space-12: @space-12;
+  --space-16: @space-16;
+  --space-24: @space-24;
+  --space-32: @space-32;
+  --space-40: @space-40;
+  --space-48: @space-48;
 }
