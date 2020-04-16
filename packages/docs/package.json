@@ -60,7 +60,7 @@
     "babel-plugin-inline-react-svg": "^1.1.1"
   },
   "peerDependencies": {
-    "@transferwise/eslint-config": "^2.1.0",
+    "@transferwise/eslint-config": "^5.0.3",
     "react": "16.8.6",
     "react-dom": "16.8.6"
   },
