@@ -17,7 +17,7 @@ export const basic = () => {
         {
           label: 'One',
           onClick() {
-            alert('You clicked on step 1, which triggered this function, which alerted you.');
+            alert('You clicked on step 1, which triggered this function, which alerted you.'); // eslint-disable-line
           },
         },
         {

@@ -62,7 +62,8 @@ export default class MoneyInput extends Component {
     ),
   };
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!this.amountFocused) {
       this.setState({
         formattedAmount: formatAmountIfSet(
@@ -74,7 +75,7 @@ export default class MoneyInput extends Component {
     }
   }
 
-  onAmountChange = event => {
+  onAmountChange = (event) => {
     const { value } = event.target;
     this.setState({
       formattedAmount: value,
@@ -98,14 +99,17 @@ export default class MoneyInput extends Component {
     const selectOptions = [...filterOptionsForQuery(this.props.currencies, this.state.searchQuery)];
 
     if (this.props.onCustomAction) {
-      selectOptions.push({ value: CUSTOM_ACTION, label: this.props.customActionLabel });
+      selectOptions.push({
+        value: CUSTOM_ACTION,
+        label: this.props.customActionLabel,
+      });
     }
 
     return selectOptions;
   }
 
   setAmount() {
-    this.setState(previousState => {
+    this.setState((previousState) => {
       const parsed = parseAmount(
         previousState.formattedAmount,
         this.props.selectedCurrency.currency,
@@ -126,7 +130,7 @@ export default class MoneyInput extends Component {
     });
   }
 
-  handleSelectChange = value => {
+  handleSelectChange = (value) => {
     this.setState({ searchQuery: '' });
 
     if (this.props.onCustomAction && value.value === CUSTOM_ACTION) {
@@ -136,7 +140,7 @@ export default class MoneyInput extends Component {
     }
   };
 
-  style = className => this.props.classNames[className] || className;
+  style = (className) => this.props.classNames[className] || className;
 
   render() {
     const { selectedCurrency, onCurrencyChange, size, addon } = this.props;
@@ -222,7 +226,7 @@ export default class MoneyInput extends Component {
               selected={{ ...selectedCurrency, note: null }}
               onChange={this.handleSelectChange}
               searchPlaceholder={this.props.searchPlaceholder}
-              onSearchChange={searchQuery => this.setState({ searchQuery })}
+              onSearchChange={(searchQuery) => this.setState({ searchQuery })}
               searchValue={this.state.searchQuery}
               size={size}
               required
@@ -242,7 +246,7 @@ function filterOptionsForQuery(options, query) {
     return options;
   }
 
-  const filteredOptions = removeDuplicateValueOptions(options).filter(option =>
+  const filteredOptions = removeDuplicateValueOptions(options).filter((option) =>
     isCurrencyOptionAndFitsQuery(option, query),
   );
 
@@ -253,7 +257,7 @@ function removeDuplicateValueOptions(options) {
   const result = [];
   const resultValues = [];
 
-  options.forEach(option => {
+  options.forEach((option) => {
     if (option.value && resultValues.indexOf(option.value) === -1) {
       result.push(option);
       resultValues.push(option.value);

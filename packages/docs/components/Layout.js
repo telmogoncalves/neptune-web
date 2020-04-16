@@ -21,7 +21,7 @@ const Layout = ({ children, router: { pathname } }) => {
   const isIndex = pathname === '/';
   const dir = pathname.split('/')[1];
   const slug = isIndex ? 'index' : pathname.split('/').pop();
-  const page = pages.find(p => p.dir === dir && p.slug === slug);
+  const page = pages.find((p) => p.dir === dir && p.slug === slug);
   const editPath = `${githubURL}${isIndex ? '' : `/${dir}`}/${slug}.mdx`;
 
   return (
@@ -54,13 +54,13 @@ const Layout = ({ children, router: { pathname } }) => {
             </a>
           </Link>
           <ul className="Nav Nav--dark">
-            {sections.map(section => (
+            {sections.map((section) => (
               <li key={section.title}>
                 <Link
                   href={
                     section.dir === ''
                       ? '/'
-                      : `/${section.dir}/${pages.find(p => p.dir === section.dir).slug}`
+                      : `/${section.dir}/${pages.find((p) => p.dir === section.dir).slug}`
                   }
                 >
                   <a className={`Nav__Link ${dir === section.dir ? 'active' : null}`}>
@@ -86,7 +86,7 @@ const Layout = ({ children, router: { pathname } }) => {
           alignItems="flex-start"
           className="Sidebar"
         >
-          <Sidebar title={sections.find(section => section.dir === dir).title} slug={dir} />
+          <Sidebar title={sections.find((section) => section.dir === dir).title} slug={dir} />
         </Box>
       )}
       <Flex

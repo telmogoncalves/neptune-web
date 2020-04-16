@@ -15,7 +15,7 @@ export const basic = () => {
 
   return (
     <PhoneNumberInput
-      onChange={v => console.log(v)}
+      onChange={(v) => console.log(v)} // eslint-disable-line
       initialValue="+447573135343"
       locale={locale}
       countryCode=""

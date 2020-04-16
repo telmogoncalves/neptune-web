@@ -15,6 +15,7 @@
       }
     ],
     // New Rules to remove in NP-101
+    "fp/no-mutation": "off",
     "eol-last": "off",
     "react/jsx-wrap-multilines": 0,
     "lines-between-class-members": "off",

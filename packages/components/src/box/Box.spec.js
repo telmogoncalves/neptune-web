@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer'; // eslint-disable-line import/no-ext
 import Box from './';
 
 const Width = { default: 1 / 2, xs: 1, sm: 1 / 2, md: 30, lg: 40, xl: 0 };
-const customMediaQueries = [10, 20, 30, 40, 50].map(bp => `@media (min-width: ${bp}px)`);
+const customMediaQueries = [10, 20, 30, 40, 50].map((bp) => `@media (min-width: ${bp}px)`);
 
 expect.addSnapshotSerializer(serializer);
 

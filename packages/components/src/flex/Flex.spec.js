@@ -17,7 +17,7 @@ const Direction = {
 
 const Size = { default: 0, xs: 1 / 8, sm: 1 / 4, md: 1 / 2, lg: 100, xl: 100 };
 
-const customMediaQueries = [10, 20, 30, 40, 50].map(bp => `@media (min-width: ${bp}px)`);
+const customMediaQueries = [10, 20, 30, 40, 50].map((bp) => `@media (min-width: ${bp}px)`);
 
 expect.addSnapshotSerializer(serializer);
 

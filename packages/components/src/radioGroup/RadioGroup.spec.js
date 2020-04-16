@@ -30,10 +30,10 @@ const RADIOS = [
 
 describe('RadioGroup', () => {
   beforeEach(() => {
-    console.error = jest.fn();
+    console.error = jest.fn(); // eslint-disable-line
   });
   afterEach(() => {
-    console.error.mockClear();
+    console.error.mockClear(); // eslint-disable-line
   });
 
   it('returns null if radios are not provvalueed', () => {
@@ -42,25 +42,18 @@ describe('RadioGroup', () => {
 
   it('Throws error if radios are not provvalueed', () => {
     shallow(<RadioGroup radios={[]} {...props} />);
-    expect(console.error).toHaveBeenCalled();
+    expect(console.error).toHaveBeenCalled(); // eslint-disable-line
   });
 
   it(`Doesn't throw error if radios are provvalueed`, () => {
     shallow(<RadioGroup radios={RADIOS} {...props} />);
-    expect(console.error).not.toHaveBeenCalled();
+    expect(console.error).not.toHaveBeenCalled(); // eslint-disable-line
   });
 
   it('returns radio options', () => {
     const component = shallow(<RadioGroup radios={RADIOS} {...props} />);
     expect(component.find(Radio).length).toBe(RADIOS.length);
-    expect(
-      JSON.stringify(
-        component
-          .find(Radio)
-          .at(0)
-          .props(),
-      ),
-    ).toEqual(
+    expect(JSON.stringify(component.find(Radio).at(0).props())).toEqual(
       JSON.stringify({
         id: 'id-test-0',
         value: 'value-test0',
@@ -79,27 +72,14 @@ describe('RadioGroup', () => {
       <RadioGroup radios={RADIOS} selectedValue="value-test2" {...props} />,
     );
     expect(component.find(Radio).length).toBe(RADIOS.length);
-    expect(
-      component
-        .find(Radio)
-        .at(2)
-        .props().checked,
-    ).toBeTruthy();
+    expect(component.find(Radio).at(2).props().checked).toBeTruthy();
 
-    expect(
-      component
-        .find(Radio)
-        .at(0)
-        .props().checked,
-    ).toBeFalsy();
+    expect(component.find(Radio).at(0).props().checked).toBeFalsy();
   });
 
   it('calls onChange with selected value', () => {
     const component = shallow(<RadioGroup radios={RADIOS} {...props} />);
-    component
-      .find(Radio)
-      .at(2)
-      .simulate('change', 'value-test2');
+    component.find(Radio).at(2).simulate('change', 'value-test2');
 
     expect(props.onChange).toHaveBeenCalledWith('value-test2');
   });
