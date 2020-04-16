@@ -36,7 +36,7 @@ const DateInput = (props) => {
     return null;
   };
 
-  const getExplodedDate = unit => {
+  const getExplodedDate = (unit) => {
     let explodedDate = INITIAL_DEFAULT_STATE;
 
     if (value && isDateValid(value)) {
