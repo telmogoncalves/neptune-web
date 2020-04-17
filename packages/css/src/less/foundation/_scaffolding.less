@@ -4,18 +4,15 @@
 ::before,
 ::after {
   box-sizing: border-box;
-  border-color: var(--color-border-primary);
-  border-style: solid;
-  border-width: 0;
 }
 
 html {
   color: var(--color-text-normal, #333);
-  background-color: var(--color-background-body, #fff);
   font-size: var(--font-size, 1rem);
   font-family: var(--font-family);
   line-height: var(--line-height, 1.5);
   letter-spacing: var(--letter-spacing);
+  background-color: var(--color-background-body, #fff);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; // Normalize 8.0.1
@@ -209,7 +206,6 @@ ol,
 ul {
   margin: 0 0 var(--space-24);
   padding: 0 0 0 38px;
-  list-style: none;
 
   ol,
   ul {
@@ -320,6 +316,7 @@ hr {
 
 table {
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
 img,
