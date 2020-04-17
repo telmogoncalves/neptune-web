@@ -29,7 +29,8 @@ h1,
 .h1 {
   margin-bottom: var(--space-4);
   font-weight: var(--font-weight-bold, 800);
-  line-height: calc(32 / 28);
+  font-size: var(--font-size-x-large);
+  line-height: 1.1428571429; // 32/28
 
   @media (--screen-md) {
     margin-bottom: var(--space-8);
@@ -41,25 +42,25 @@ h2,
 .h2 {
   margin-bottom: 2px;
   font-size: var(--font-size-large);
-  line-height: calc(30 / 22);
+  line-height: 1.3636363636; //30/22
 
   @media (--screen-md) {
     margin-bottom: var(--space-4);
     font-weight: var(--font-weight-bold, 800);
     font-size: var(--font-size-x-large);
-    line-height: calc(32 / 28);
+    line-height: 1.1428571429; // 32/28
   }
 }
 
 h3,
 .h3 {
   font-size: var(--font-size-medium);
-  line-height: calc(24 / 18);
+  line-height: 1.3333333333; // 24/18
 
   @media (--screen-md) {
     margin-bottom: 2px;
     font-size: var(--font-size-large);
-    line-height: calc(30 / 22);
+    line-height: 1.3636363636; // 30/22
   }
 }
 
@@ -67,29 +68,34 @@ h4,
 h5,
 .h4,
 .h5 {
-  line-height: calc(24 / 16);
+  line-height: 1.5; // 24/16
 }
 
 h4,
 .h4 {
-  font-size: var(--font-size);
+  // font-size: var(--font-size);
+  font-size: 1.0666666667rem; // 16/15
 
   @media (--screen-md) {
     font-size: var(--font-size-medium);
-    line-height: calc(24 / 18);
+    line-height: 1.3333333333; // 24/18
   }
 }
 
 h5,
 .h5 {
-  font-size: var(--font-size);
+  font-size: 1.0666666667rem; // 16/15
+
+  @media (--screen-md) {
+    font-size: var(--font-size);
+  }
 }
 
 h6,
 .h6 {
   color: @color-base-grey-light;
   font-size: var(--font-size-small);
-  line-height: calc(24 / 14);
+  line-height: 1.7142857143; // 24/14
 }
 
 h1,
@@ -139,22 +145,24 @@ p {
   margin: 0 0 var(--space-24);
   font-weight: 300;
   font-size: var(--font-size-medium, 112.5%);
-  line-height: calc(32 / 18);
+  line-height: 1.7777777778; // 32/18
 
   @media (--screen-md) {
     font-size: 1.375rem; // 22px
-    line-height: calc(32 / 22);
+    line-height: 1.4545454545; // 32/22
   }
 }
 
 small,
 .small {
   font-size: var(--font-size-small, 80%);
+  line-height: 1.7142857143; // 24/14
 }
 
 .tiny {
   color: @color-base-grey-light;
   font-size: var(--font-size-x-small, 75%);
+  line-height: 2; // 24/12
 }
 
 strong,
@@ -167,7 +175,6 @@ b {
 mark,
 .mark {
   padding: 0.2em;
-  color: #000;
   background-color: var(--color-background-warning);
 }
 
@@ -202,6 +209,7 @@ address {
 blockquote {
   margin: var(--space-16) 0;
   padding: 0 var(--space-16) 0 calc(var(--space-16) - 2px);
+  font-size: 1.0666666667rem;
   border-left: 2px solid var(--color-accent);
 
   p {
@@ -219,7 +227,8 @@ blockquote {
   footer {
     display: block;
     color: @color-base-grey-light;
-    font-size: 80%;
+    font-size: var(--font-size-small);
+    line-height: 1.7142857143; // 24/14
 
     &:before {
       content: '\2014 \00A0'; // em dash, nbsp
@@ -233,6 +242,7 @@ blockquote {
   @media (--screen-lg) {
     margin: var(--space-32);
     font-size: var(--font-size-medium);
+    line-height: 1.3333333333; // 24/18
   }
 }
 
@@ -266,12 +276,17 @@ samp {
 pre {
   margin: 0 0 var(--space-24);
   padding: var(--space-16);
+  overflow: auto;
+  color: @color-base-grey-dark-plus;
+  font-size: var(--font-size-small);
+  line-height: 1.7142857143; // 24/14
   word-wrap: break-word;
   word-break: break-all;
   background-color: var(--color-background-neutral);
 
   code {
     padding: 0;
+    font-size: inherit;
     white-space: pre-wrap;
     background-color: transparent;
     border-radius: 0;
@@ -281,11 +296,13 @@ pre {
 code {
   padding: 2px var(--space-4);
   font-size: 90%;
+  color: @color-base-grey-dark-plus;
   background-color: var(--color-background-neutral);
 }
 
 kbd {
   padding: 2px var(--space-4);
+  font-size: 90%;
   color: #fff;
   background-color: #333;
 
