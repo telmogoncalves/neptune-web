@@ -1,3 +1,6 @@
+@import (reference) '../variables/_colors.less';
+@import '../mixins/_text-emphasis.less';
+
 .text-xs-left {
   text-align: left;
 }
@@ -131,6 +134,55 @@
 
 .font-italic {
   font-style: italic !important;
+}
+
+// Contextual colors `.text-*`
+.text-primary {
+  .text-emphasis-variant(@color-base-navy-mid, @color-base-navy-mid, @color-base-navy-dark);
+
+  .bg-primary & {
+    color: @color-base-white !important;
+  }
+}
+
+.text-success {
+  .text-emphasis-variant(@color-base-green-dark, @color-base-green-light, @color-base-green-dark);
+
+  .bg-primary & {
+    color: @color-base-green-light !important;
+  }
+}
+
+.text-info {
+  .text-emphasis-variant(@color-base-blue-dark, @color-base-blue-light, @color-base-blue-dark);
+
+  .bg-primary & {
+    color: @color-base-blue-light !important;
+  }
+}
+
+.text-warning {
+  .text-emphasis-variant(
+    @color-base-orange-dark,
+    @color-base-orange-light,
+    @color-base-orange-dark
+  );
+
+  .bg-primary & {
+    color: @color-base-orange-light !important;
+  }
+}
+
+.text-danger {
+  .text-emphasis-variant(@color-base-red-dark, @color-base-red-light, @color-base-red-dark);
+
+  .bg-primary & {
+    color: @color-base-red-light !important;
+  }
+}
+
+.text-inverse {
+  .text-emphasis-variant(@color-base-white, @color-base-white, @color-base-smoke-fade);
 }
 
 .text-muted {

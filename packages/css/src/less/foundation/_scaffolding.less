@@ -153,6 +153,9 @@ button,
   }
 }
 
+// iOS "clickable elements" fix for role="button"
+// see https://developer.mozilla.org/en-US/docs/Web/Events/click#Safari_Mobile
+
 [role='button'] {
   cursor: pointer;
 }
@@ -353,6 +356,7 @@ img {
   display: none; // Normalize 8.0.1
 }
 
+// Only display content to screen readers
 .sr-only {
   position: absolute;
   width: 1px;
@@ -364,6 +368,7 @@ img {
   clip: rect(0, 0, 0, 0);
 }
 
+// Use in conjunction with `.sr-only` to only display content when it's focused.
 .sr-only-focusable {
   &:active,
   &:focus {
