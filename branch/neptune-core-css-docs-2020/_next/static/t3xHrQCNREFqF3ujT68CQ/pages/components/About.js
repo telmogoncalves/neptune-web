@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{rG6U:function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/About",function(){return w("90Tf")}])}},[["rG6U",0,1]]]);
