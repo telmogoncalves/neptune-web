@@ -7,12 +7,12 @@
 }
 
 html {
-  color: var(--color-text-normal, #333);
+  color: var(--color-text-secondary, #333);
   font-size: var(--font-size, 1rem);
   font-family: var(--font-family);
   line-height: var(--line-height, 1.5);
   letter-spacing: var(--letter-spacing);
-  background-color: var(--color-background-body, #fff);
+  background-color: var(--color-background-screen, #fff);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%; // Normalize 8.0.1
@@ -83,7 +83,7 @@ a,
   }
 
   &[disabled] {
-    color: var(--color-text-link-disabled);
+    color: @color-base-smoke-mid;
     cursor: default;
   }
 }
@@ -230,7 +230,7 @@ ul {
     display: inline-block;
     padding-right: var(--space-8);
     padding-left: var(--space-4);
-    border-right: 1px solid var(--color-border-primary);
+    border-right: 1px solid var(--color-border-neutral);
 
     &:last-child {
       border-right: 0;

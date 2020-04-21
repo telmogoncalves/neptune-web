@@ -14,7 +14,7 @@
 @color-base-orange-light: #ffa600;
 @color-base-orange-mid: #df8700;
 @color-base-orange-dark: #c07500;
-@color-base-orange-fade: #fff3dd;
+@color-base-orange-fade: #fff4dd;
 @color-base-smoke-light: #e2e6e8;
 @color-base-smoke-mid: #d3d5d8;
 @color-base-smoke-dark: #a8aaac;
@@ -26,135 +26,130 @@
 @color-base-grey-light: #829ca9;
 @color-base-grey-mid: #6f8691;
 @color-base-grey-dark: #5d7079;
-@color-base-grey-dark-plus: #4a5860;
-@color-base-accent-amber: #ffb619;
-@color-base-accent-purple: #485cc7;
-@color-base-borderless-green: #44ee70; // Only use Borderless Green when directly referencing the card.
 @color-base-white: #ffffff;
-@color-base-black: #000000;
 
 // Semantic colours
 :root {
-  --color-primary: @color-base-navy-mid;
+  --color-primary: @color-base-navy-light;
+  --color-secondary: @color-base-grey-mid;
   --color-accent: @color-base-blue-light;
   --color-positive: @color-base-green-light;
   --color-negative: @color-base-red-light;
   --color-warning: @color-base-orange-light;
-
-  --color-text-primary: @color-base-navy-mid;
-  --color-text-normal: @color-base-grey-dark;
-  --color-text-positive: var(--color-positive);
-  --color-text-negative: var(--color-negative);
-  --color-text-warning: var(--color-warning);
+  --color-text-primary: var(--color-primary);
+  --color-text-secondary: var(--color-secondary);
+  --color-text-inactive: @color-base-smoke-dark;
+  --color-text-important: var(--color-primary);
   --color-text-link: var(--color-accent);
   --color-text-link-hover: @color-base-blue-mid;
   --color-text-link-active: @color-base-blue-dark;
-  --color-text-link-disabled: @color-base-smoke-mid;
-  --color-text-input: @color-base-navy-mid;
-  --color-text-inactive: @color-base-smoke-dark;
-
-  --color-background: @color-base-white;
+  --color-text-positive: var(--color-positive);
+  --color-text-negative: var(--color-negative);
+  --color-text-warning: var(--color-warning);
+  --color-control-accent: var(--color-accent);
+  --color-control-positive: var(--color-positive);
+  --color-control-negative: var(--color-negative);
+  --color-control-warning: var(--color-warning);
+  --color-border-neutral: @color-base-smoke-light;
+  --color-border-focus: var(--color-accent);
+  --color-background-screen: @color-base-white;
+  --color-background-elevated: @color-base-white;
+  --color-background-neutral: @color-base-smoke-fade;
+  --color-background-accent: @color-base-blue-fade;
   --color-background-positive: @color-base-green-fade;
   --color-background-negative: @color-base-red-fade;
   --color-background-warning: @color-base-orange-fade;
-  --color-background-neutral: @color-base-smoke-fade;
-
-  --color-border-primary: @color-base-smoke-light;
 }
 
-/* COLOURS BELOW WILL BE DEPRACATED */
+// COLOURS THAT CAN BE SAFELY REMOVED
+// --brand-pale-blue-minus-20: #77d9f7;
+// --brand-pale-blue-minus-10: #a7e2f9;
+// --brand-blue-plus-10: #283957;
+// --brand-blue-plus-20: #2f4366;
+// --brand-blue--rbg: 34, 48, 73;
+// --brand-light-blue-minus-20: @color-base-blue-dark;
+// --brand-light-blue-wash: #d8f1fa;
+// --brand-grey-minus-20: #384347;
+// --brand-grey-minus-10: @color-base-grey-dark-plus;
+// --brand-grey: @color-base-grey-dark;
+// --brand-grey-plus-20: @color-base-grey-light;
+// --brand-smoke-minus-20: #7e7f81;
+// --brand-red-minus-20: #b62a18;
+// --brand-red-minus-10: #c22e2e;
+// --brand-red: #f53636;
+// --brand-red-wash: #ffdfdf;
+// --brand-red-alert: #c22e2e;
+// --brand-green-minus-20: #1b7940;
+// --brand-green-wash: #d6f5e2;
+// --brand-green-alert: #1b7940;
+// --brand-orange-minus-20: #9e5f00;
+// --brand-orange-minus-10: #df8700;
+// --brand-orange: #ffa600;
+// --brand-orange-wash: #fff3dd;
+// --brand-orange-alert: #9e5f00;
+// --brand-yellow-minus-20: #c0ae10;
+// --brand-yellow-minus-10: #dfc912;
+// --brand-yellow: #ffe714;
+// --gray-dark: @color-base-grey-dark-plus;
+// --gray: @color-base-grey-dark;
+// --gray-lighter: var(--brand-smoke);
+// --brand-success: var(--brand-green);
+// --brand-info: var(--brand-light-blue);
+// --brand-warning: var(--brand-orange);
+// --brand-danger: var(--brand-red);
+// --text-color: var(--color-text-normal);
+// --text-secondary-color: var(--brand-grey);
+
+/* COLOURS THAT WILL BE DEPRECATED */
 // TODO: Remove and clean this list
 :root {
-  --brand-white: #fff;
-
-  /* Text colors */
-  --text-color: #5d7079;
-  --link-color: #00b9ff;
+  --brand-white: @color-base-white; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-white&type=Code
+  --link-color: var(
+    --color-text-link
+  ); // TODO: https://github.com/search?q=org%3Atransferwise+--link-color&type=Code
 
   /* Blues */
-  --brand-pale-blue-minus-20: #77d9f7;
-  --brand-pale-blue-minus-10: #a7e2f9;
-  --brand-pale-blue: #dbf0fd;
-
-  --brand-navy-minus-20: #253655;
-  --brand-navy-minus-10: #2e4369;
-  --brand-navy: #37517e;
-
-  --brand-blue-minus-20: #111824;
-  --brand-blue-minus-10: #192439;
-  --brand-blue: #223049;
-  --brand-blue-plus-10: #283957;
-  --brand-blue-plus-20: #2f4366;
-
-  --brand-blue--rbg: 34, 48, 73;
+  --brand-pale-blue: #dbf0fd; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-pale-blue&type=Code
+  --brand-navy-minus-20: @color-base-navy-dark; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-navy-minus-20&type=Code
+  --brand-navy-minus-10: @color-base-navy-mid; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-navy-minus-10&type=Code
+  --brand-navy: @color-base-navy-light; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-navy&type=Code
+  --brand-blue-minus-20: #111824; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-blue-minus-20&type=Code
+  --brand-blue-minus-10: #192439; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-blue-minus-10&type=Code
+  --brand-blue: #223049; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-blue&type=Code
 
   /* Light Blues */
-  --brand-light-blue-minus-20: #008ec0;
-  --brand-light-blue-minus-10: #00a4df;
-  --brand-light-blue: #00b9ff;
-  --brand-light-blue-wash: #d8f1fa;
+  --brand-light-blue-minus-10: @color-base-blue-mid; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-light-blue-minus-10&type=Code
+  --brand-light-blue: @color-base-blue-light; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-light-blue&type=Code
 
   /* Dark Grays */
-  --brand-grey-minus-20: #384347;
-  --brand-grey-minus-10: #4a5860;
-  --brand-grey: #5d7079;
-  --brand-grey-plus-10: #6f8691;
-  --brand-grey-plus-20: #829ca9;
+  --brand-grey-plus-10: @color-base-grey-mid; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-grey-plus-10&type=Code
 
   /* Light Grays */
-  --brand-smoke-minus-20: #7e7f81;
-  --brand-smoke-minus-10: #a8aaac;
-  --brand-smoke: #d3d5d8;
-  --brand-smoke-plus-10: #e2e6e8;
-  --brand-smoke-plus-20: #f2f5f7;
-
-  /* Reds */
-  --brand-red-minus-20: #b62a18;
-  --brand-red-minus-10: #c22e2e;
-  --brand-red: #f53636;
-
-  --brand-red-wash: #ffdfdf;
-  --brand-red-alert: #c22e2e;
+  --brand-smoke-minus-10: @color-base-smoke-dark; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-smoke-minus-10&type=Code
+  --brand-smoke: @color-base-smoke-mid; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-smoke&type=Code
+  --brand-smoke-plus-10: @color-base-smoke-light; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-smoke-plus-10&type=Code
+  --brand-smoke-plus-20: @color-base-smoke-fade; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-smoke-plus-20&type=Code
 
   /* Greens */
-  --brand-green-minus-20: #1b7940;
-  --brand-green-minus-10: #28b862;
-  --brand-green: #2ed06e;
-
-  --brand-green-wash: #d6f5e2;
-  --brand-green-alert: #1b7940;
-
-  /* Oranges */
-  --brand-orange-minus-20: #9e5f00;
-  --brand-orange-minus-10: #df8700;
-  --brand-orange: #ffa600;
-
-  --brand-orange-wash: #fff3dd;
-  --brand-orange-alert: #9e5f00;
-
-  /* Yellows */
-  --brand-yellow-minus-20: #c0ae10;
-  --brand-yellow-minus-10: #dfc912;
-  --brand-yellow: #ffe714;
+  --brand-green-minus-10: @color-base-green-mid; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-green-minus-10&type=Code
+  --brand-green: @color-base-green-light; // TODO: https://github.com/search?q=org%3Atransferwise+--brand-green&type=Code
 
   /* Color Mapping */
   /* Gray and brand colors for use across the Design System. */
+  --gray-base: var(
+    --brand-smoke-plus-20
+  ); // TODO: https://github.com/search?q=org%3Atransferwise+--gray-base&type=Code
+  --gray-darker: #384347; // TODO: https://github.com/search?q=org%3Atransferwise+--gray-darker&type=Code
+  --gray-light: @color-base-grey-light; // TODO: https://github.com/search?q=org%3Atransferwise+--gray-light&type=Code
 
-  --gray-base: var(--brand-smoke-plus-20);
-  --gray-darker: var(--brand-grey-minus-20);
-  --gray-dark: var(--brand-grey-minus-10);
-  --gray: var(--brand-grey);
-  --gray-light: var(--brand-grey-plus-20);
-  --gray-lighter: var(--brand-smoke);
+  --brand-primary: var(
+    --brand-navy
+  ); // TODO: https://github.com/search?q=org%3Atransferwise+--brand-primary&type=Code
 
-  --brand-primary: var(--brand-navy);
-  --brand-success: var(--brand-green);
-  --brand-info: var(--brand-light-blue);
-  --brand-warning: var(--brand-orange);
-  --brand-danger: var(--brand-red);
-
-  --body-bg: var(--brand-white);
-  --text-color: var(--brand-grey);
-  --text-bold-color: var(--brand-navy-minus-10);
-  --text-secondary-color: var(--brand-grey);
+  --body-bg: var(
+    --brand-white
+  ); // TODO: https://github.com/search?q=org%3Atransferwise+--body-bg&type=Code
+  --text-bold-color: var(
+    --brand-navy-minus-10
+  ); // TODO: https://github.com/search?q=org%3Atransferwise+--text-bold-color&type=Code
 }
