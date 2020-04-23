@@ -26,6 +26,7 @@
 - `responsive-utilities` moved to `neptune-addons.css`.
 
 ## Deprecated Features
+- '--spacer' custom property. Replace its use for --space-8 or other spacer tokens. Avoid operations as 'calc(var(--spacer) * 5)' and use 'var(--spacer-40)' instead. 
 
 ## Removed Rules
 
