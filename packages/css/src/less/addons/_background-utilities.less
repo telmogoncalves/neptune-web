@@ -1,18 +1,19 @@
 @import (reference) '../variables/_colors.less';
 
 // Contextual backgrounds
+
 .bg-default {
   background-color: var(--color-background-neutral) !important;
+}
 
-  p,
-  .lead {
-    color: @color-base-grey-dark;
-  }
+.bg-info {
+  background-color: @color-base-blue-light !important;
+  color: @color-base-smoke-fade;
 }
 
 .bg-primary {
-  color: @color-base-smoke-fade;
   background-color: @color-base-navy-light !important;
+  color: @color-base-smoke-fade;
 }
 
 .bg-success {
@@ -25,11 +26,6 @@
 
 .bg-warning {
   background-color: var(--color-background-warning) !important;
-}
-
-.bg-info {
-  background-color: @color-base-blue-fade !important;
-  color: @color-base-smoke-fade;
 }
 
 .bg-primary,
@@ -46,7 +42,6 @@
   .h4,
   .h5,
   .h6,
-  dd,
   strong {
     color: @color-base-white;
   }
