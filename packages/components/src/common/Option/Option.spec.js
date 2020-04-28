@@ -9,6 +9,12 @@ describe('Option', () => {
     component = shallow(<Option title="" content="" media={<span />} button={<span />} />);
   });
 
+  it('does not have decision class when the flag is set to false', () => {
+    expect(hasDecisonClass()).toBe(true);
+    component.setProps({ decision: false });
+    expect(hasDecisonClass()).toBe(false);
+  });
+
   it('has complex class when the flag is passed', () => {
     expect(hasComplexClass()).toBe(false);
     component.setProps({ complex: true });
@@ -50,6 +56,12 @@ describe('Option', () => {
     expect(circleContentIsElement(<Icon />)).toBe(true);
   });
 
+  it('does not render the circle content with circle-inverse class when inverseMediaCircle is set to false', () => {
+    expect(circleContentHasInverseClass()).toBe(true);
+    component.setProps({ inverseMediaCircle: false });
+    expect(circleContentHasInverseClass()).toBe(false);
+  });
+
   it('has passed title', () => {
     component.setProps({ title: 'A title' });
     expect(title()).toBe('A title');
@@ -65,7 +77,7 @@ describe('Option', () => {
   });
 
   it('renders as the tag that you pass it', () => {
-    component.setProps({ as: 'a' });
+    component.setProps({ as: 'a', href: 'https://example.com' });
     expect(mainComponentTag()).toBe('a');
   });
 
@@ -81,16 +93,16 @@ describe('Option', () => {
     expect(component.prop('href')).toBe('https://example.com');
   });
 
+  const hasDecisonClass = () => component.hasClass('decision');
   const hasComplexClass = () => component.hasClass('decision-complex');
   const hasDisabledClass = () => component.hasClass('disabled');
   const htmlFor = () => component.prop('htmlFor');
   const circle = () => component.find('.media-left');
-  const circleContentIsElement = element =>
-    component
-      .find('.media-left .circle')
-      .childAt(0)
-      .matchesElement(element);
+  const circleContent = () => component.find('.media-left .circle');
+  const circleContentHasInverseClass = () => circleContent().hasClass('circle-inverse');
+  const circleContentIsElement = (element) => circleContent().childAt(0).matchesElement(element);
   const title = () => component.find('h5').text();
   const mainComponentTag = () => component.name();
-  const bodyHasElement = element => component.find('.media-body').containsMatchingElement(element);
+  const bodyHasElement = (element) =>
+    component.find('.media-body').containsMatchingElement(element);
 });

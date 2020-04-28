@@ -15,18 +15,26 @@ const Option = ({
   htmlFor,
   disabled,
   button,
+  decision,
   complex,
   className,
+  inverseMediaCircle,
 }) => (
   <Element
-    className={classNames(className, 'media decision', { 'decision-complex': complex, disabled })}
+    className={classNames(className, 'media', { 'decision-complex': complex, decision, disabled })}
     href={href}
     onClick={onClick}
     htmlFor={htmlFor}
   >
     {media && (
       <div className="media-left">
-        <div className="circle circle-sm circle-inverse text-primary">{media}</div>
+        <div
+          className={classNames('circle circle-sm text-primary', {
+            'circle-inverse': inverseMediaCircle,
+          })}
+        >
+          {media}
+        </div>
       </div>
     )}
     <div className="media-body">
@@ -43,11 +51,13 @@ Option.propTypes = {
   title: Types.node.isRequired,
   content: Types.node,
   onClick: Types.func,
-  href: requiredIf(Types.string, props => props.as === 'a'),
+  href: requiredIf(Types.string, (props) => props.as === 'a'),
   as: Types.elementType,
   disabled: Types.bool,
-  button: Types.node.isRequired,
+  button: Types.node,
+  decision: Types.bool,
   complex: Types.bool,
+  inverseMediaCircle: Types.bool,
   className: Types.string,
 };
 
@@ -57,9 +67,12 @@ Option.defaultProps = {
   content: null,
   htmlFor: null,
   disabled: false,
+  button: null,
   onClick: null,
   href: null,
+  decision: true,
   complex: false,
+  inverseMediaCircle: true,
   className: null,
 };
 
