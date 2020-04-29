@@ -1,0 +1,37 @@
+{
+  "name": "@transferwise/storybook-config",
+  "version": "1.0.0",
+  "description": "Neptune Web shared storybook config files and dependencies",
+  "license": "Apache-2.0",
+  "main": "./.storybook/config.js",
+  "keywords": [
+    "transferwise",
+    "storybook",
+    "storybook",
+    "storybook"
+  ],
+  "repository": {
+    "type": "git",
+    "fullname": "transferwise/neptune-web",
+    "url": "git+https://github.com/transferwise/neptune-web.git"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.18",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
+    "@storybook/react": "^5.3.18"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
