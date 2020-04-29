@@ -46,3 +46,4 @@
 - `article`, and `.article`
 - `.bg-focus` and its childs
 - `.lang_ja`, `.lang_ja h[1-6]`, `.lang_ja .h[1-6]`
+- `.bg-default` `<p>` color
