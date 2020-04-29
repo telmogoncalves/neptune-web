@@ -39,7 +39,6 @@
 
 - `.img-responsive`
 - `.img-thumbnail`
-- `.visible-xs`, `.visible-sm`, `.visible-md`, `.visible-lg`, and `.visible-xl`
 - `.visible-print`, `.visible-print-block`, `.visible-print-inline`, and `.visible-print-inline-block`
 - `.hidden-print`
 - `.orderable-xs`, `.orderable-sm`, `.orderable-md`, `.orderable-lg`, and `.orderable-xl`
