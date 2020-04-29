@@ -77,15 +77,7 @@ describe('Server side rendering', () => {
     Sticky: { position: 'top' },
     MoneyInput: { selectedCurrency: { currency: 'EUR' } },
     Tabs: { selected: 1, onTabSelect: jest.fn() },
-    Box: {
-      size: {
-        xs: 1,
-        sm: 1,
-        md: 1,
-        lg: 1,
-        xl: 1,
-      },
-    },
+    Markdown: { children: '# Markdown string' },
     SnackbarConsumer: {
       children: jest.fn(),
     },
@@ -94,12 +86,12 @@ describe('Server side rendering', () => {
     },
   };
 
-  componentNames.forEach(componentName => {
+  componentNames.forEach((componentName) => {
     it(`works for ${componentName} components`, () => {
       const Component = components[componentName];
       const newProps = { ...allProps };
       if (overrideProps[componentName]) {
-        Object.keys(overrideProps[componentName]).forEach(propToOverrideKey => {
+        Object.keys(overrideProps[componentName]).forEach((propToOverrideKey) => {
           newProps[propToOverrideKey] = overrideProps[componentName][propToOverrideKey];
         });
       }
