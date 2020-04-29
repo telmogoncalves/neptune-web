@@ -47,3 +47,5 @@
 - `.bg-focus` and its childs
 - `.lang_ja`, `.lang_ja h[1-6]`, `.lang_ja .h[1-6]`
 - `.bg-default` `<p>` color
+- `.*-*-section-5` and `.*-*-section-7` responsive spacing sections
+- `.footer` spacing section from addons
