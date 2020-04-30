@@ -9,6 +9,20 @@
     "string": {
       "type": "string",
       "title": "Text input"
+    },
+    "select": {
+      "type": "integer",
+      "title": "Select",
+      "oneOf": [
+        {
+          "title": "One",
+          "enum": [1]
+        },
+        {
+          "title": "Two",
+          "enum": [2]
+        }
+      ]
     }
   }
 }

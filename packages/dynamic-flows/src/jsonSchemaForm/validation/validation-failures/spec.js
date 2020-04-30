@@ -131,6 +131,36 @@ describe('Given a library for identifying validation failures', () => {
     });
   });
 
+  describe('when validating a const schema', () => {
+    beforeEach(() => {
+      schema = {
+        const: 'abcd',
+      };
+    });
+
+    it('should return an empty array when the const matches', () => {
+      expect(getValidationFailures('abcd', schema)).toEqual([]);
+    });
+    it('should return [enum] when not const', () => {
+      expect(getValidationFailures('1234', schema)).toEqual(['enum']);
+    });
+  });
+
+  describe('when validating an enum schema', () => {
+    beforeEach(() => {
+      schema = {
+        enum: ['a','b','c']
+      };
+    });
+
+    it('should return an empty array when value is one of the enums', () => {
+      expect(getValidationFailures('b', schema)).toEqual([]);
+    });
+    it('should return [enum] when not allowed', () => {
+      expect(getValidationFailures('d', schema)).toEqual(['enum']);
+    });
+  });
+
   describe('when validating an array schema', () => {
     beforeEach(() => {
       schema = {

@@ -55,12 +55,22 @@ const BasicTypeSchema = (props) => {
       setModelAndBroadcast(props.schema.default);
     }
 
+    if (props.schema.const) {
+      setModelAndBroadcast(props.schema.const);
+    }
+
+    if (props.schema.enum && props.schema.enum.length === 1) {
+      setModelAndBroadcast(props.schema.enum[0]);
+    }
+
     setId(generateId());
   };
 
   const onModelChange = () => {
     setValidations(getValidationKeys(model));
   };
+
+  const isHidden = props.schema.hidden || props.schema.const || (props.schema.enum && props.schema.enum.length === 1);
 
   useEffect(onSchemaChange, [props.schema]);
   useEffect(onModelChange, [props.model]);
@@ -75,7 +85,7 @@ const BasicTypeSchema = (props) => {
 
   const showLabel = props.schema.format !== 'file' && props.schema.type !== 'boolean';
 
-  return (
+  return !isHidden && (
     <div className={classNames(formGroupClasses)}>
       {showLabel && (
         <label className="control-label" htmlFor={id}>
