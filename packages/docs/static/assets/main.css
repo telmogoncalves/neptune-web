@@ -1,17 +1,17 @@
 /* Typography */
-h1 + p {
+h1[id] + p {
   color: var(--brand-grey-plus-10);
 }
 
 @media (min-width: 767px) {
-  h1 + p {
+  h1[id] + p {
     font-size: calc(var(--spacer) * 2.5);
     line-height: calc(var(--spacer) * 4);
   }
 }
 
-h2,
-p + h2 {
+h2[id],
+p + h2[id] {
   margin-top: calc(var(--spacer) * 8);
   margin-bottom: calc(var(--spacer) * 1);
 }
