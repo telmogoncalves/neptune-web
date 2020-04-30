@@ -47,3 +47,4 @@ export { default as OverlayHeader } from './overlayHeader';
 export { default as Image } from './image';
 export { default as Markdown } from './markdown';
 export { default as Card } from './card';
+export { default as Summary } from './summary';

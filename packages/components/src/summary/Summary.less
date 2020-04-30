@@ -1,0 +1,36 @@
+@import 'bootstrap/less/variables.less';
+
+.summary {
+  &__main {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &__help {
+    height: 16px;
+
+    .tw-icon {
+      color: @brand-light-blue;
+    }
+
+    [data-toggle='popover']:not(.btn) {
+      // Bootstrap popover has !important dotted border bottom
+      // This doesn't make sense on a help icon
+      border-bottom: none !important;
+    }
+  }
+
+  &__body {
+    margin-left: @spacer * 5;
+    font-size: @font-size-small;
+  }
+
+  & + .summary {
+    margin-top: @spacer * 3;
+  }
+}
