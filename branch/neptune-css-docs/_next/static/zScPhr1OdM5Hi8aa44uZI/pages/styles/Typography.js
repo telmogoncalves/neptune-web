@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[59],{dz2X:function(n,w,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/styles/Typography",function(){return o("5gPM")}])}},[["dz2X",0,1,2]]]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{"XXU+":function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/components/Card",function(){return w("8t5b")}])}},[["XXU+",0,1,3,6,2,4,5]]]);
