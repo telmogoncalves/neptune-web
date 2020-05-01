@@ -99,23 +99,5 @@ describe('Select With Alternatives', () => {
       searchStates('NY');
       expect(displayedStates()).toEqual([{ value: 'NY', label: 'New York' }]);
     });
-
-    it('searches by alt using contains', () => {
-      component.setProps({ useContainSearch: true });
-      const stateOptions = [
-        { value: 'MA', label: 'Massachusetts' },
-        { value: 'NY', label: 'New York' },
-        { value: 'NC', label: 'North Carolina' },
-        { value: 'SC', label: 'South Carolina' },
-      ];
-
-      expect(displayedStates()).toEqual(stateOptions);
-
-      searchStates('el'); // Tar Heel, Excelsior
-      expect(displayedStates()).toEqual([
-        { value: 'NY', label: 'New York' },
-        { value: 'NC', label: 'North Carolina' },
-      ]);
-    });
   });
 });

@@ -12,7 +12,7 @@ const OptionWithAlternatives = Types.shape({
 });
 
 const SelectWithAlternatives = props => {
-  const { searchPlaceholder, disabled, required, optionsWithAlts, useContainSearch } = props;
+  const { searchPlaceholder, disabled, required, optionsWithAlts, size } = props;
 
   const getInitialValue = () => {
     return { value: '', label: '' };
@@ -21,17 +21,15 @@ const SelectWithAlternatives = props => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedOption, setSelectedOption] = useState(getInitialValue());
 
-  const optionPropertyFitsQuery = (value, query, isContainSearch) => {
-    return value && isContainSearch
-      ? value.toLowerCase().indexOf(query.toLowerCase()) !== -1
-      : value.toLowerCase().startsWith(query.toLowerCase());
+  const optionPropertyFitsQuery = (value, query) => {
+    return value && value.toLowerCase().startsWith(query.toLowerCase());
   };
 
-  const searchAltArray = (alternatives, query, isContainSearch) => {
+  const searchAltArray = (alternatives, query) => {
     return (
       alternatives &&
       alternatives.findIndex(element =>
-        optionPropertyFitsQuery(element, query, isContainSearch),
+        optionPropertyFitsQuery(element, query),
       ) !== -1
     );
   };
@@ -39,9 +37,9 @@ const SelectWithAlternatives = props => {
   const getSelectOptions = () => {
     const filteredOptions = optionsWithAlts.filter(
       option =>
-        optionPropertyFitsQuery(option.value, searchQuery, useContainSearch) ||
-        optionPropertyFitsQuery(option.label, searchQuery, useContainSearch) ||
-        searchAltArray(option.alternatives, searchQuery, useContainSearch),
+        optionPropertyFitsQuery(option.value, searchQuery ) ||
+        optionPropertyFitsQuery(option.label, searchQuery ) ||
+        searchAltArray(option.alternatives, searchQuery ),
     );
 
     return filteredOptions.map(option => {
@@ -67,6 +65,7 @@ const SelectWithAlternatives = props => {
         searchValue={searchQuery}
         required={required}
         disabled={disabled}
+        size={size}
       />
     </div>
   );
@@ -77,14 +76,14 @@ SelectWithAlternatives.propTypes = {
   disabled: Types.bool,
   searchPlaceholder: Types.string,
   optionsWithAlts: Types.arrayOf(OptionWithAlternatives).isRequired,
-  useContainSearch: Types.bool,
+  size: Types.oneOf(['sm', 'md', 'lg']),
 };
 
 SelectWithAlternatives.defaultProps = {
   required: false,
   disabled: false,
   searchPlaceholder: '',
-  useContainSearch: false,
+  size: 'md'
 };
 
 export default SelectWithAlternatives;
