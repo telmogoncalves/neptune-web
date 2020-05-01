@@ -184,7 +184,6 @@ describe('Given a oneOfSchema component', () => {
     });
   });
 
-
   describe('when many schemas are supplied', () => {
     beforeEach(() => {
       schema = {
@@ -193,7 +192,7 @@ describe('Given a oneOfSchema component', () => {
           { title: 'One', const: 1 },
           { title: 'Two', const: 2 },
           { title: 'Three', const: 3 },
-          { title: 'Four', const: 4 }
+          { title: 'Four', const: 4 },
         ],
       };
 

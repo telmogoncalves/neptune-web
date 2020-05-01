@@ -169,9 +169,7 @@ describe('Given a component for rendering basic type schemas', () => {
   });
 
   describe('when initialised without a model and schema is a const', () => {
-    const constSchema = {
-      const: 'abcd'
-    };
+    const constSchema = { const: 'abcd' };
 
     beforeEach(() => {
       model = null;
@@ -193,9 +191,7 @@ describe('Given a component for rendering basic type schemas', () => {
   });
 
   describe('when initialised without a model and schema is a single enum', () => {
-    const enumSchema = {
-      enum: ['abcd']
-    };
+    const enumSchema = { enum: ['abcd'] };
 
     beforeEach(() => {
       model = null;
@@ -209,7 +205,7 @@ describe('Given a component for rendering basic type schemas', () => {
     it('should call the onChange handler with the const ', () => {
       expect(onChange).toHaveBeenCalledWith(enumSchema.enum[0], enumSchema);
     });
-    
+
     it('should not show any label or control ', () => {
       expect(component.find('label').length).toBe(0);
       expect(component.find(SchemaFormControl).length).toBe(0);

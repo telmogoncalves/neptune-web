@@ -57,21 +57,21 @@ const OneOfSchema = (props) => {
 
       {props.schema.oneOf.length > 1 && (
         <div className="m-b-3">
-          { controlType === 'radio' && (
+          {controlType === 'radio' && (
             <RadioGroup
               selectedValue={schemaIndex}
               radios={options}
               name="radio-group"
               onChange={onSchemaChange}
             />
-          ) }
-          { controlType === 'select' && (
+          )}
+          {controlType === 'select' && (
             <Select
               selected={options[schemaIndex]}
               options={options}
               onChange={(selected) => onSchemaChange(selected.value)}
             />
-          ) }
+          )}
         </div>
       )}
 
@@ -92,6 +92,7 @@ const OneOfSchema = (props) => {
 OneOfSchema.propTypes = {
   schema: Types.shape({
     title: Types.string,
+    control: Types.string,
     oneOf: Types.arrayOf(Types.object).isRequired,
   }).isRequired,
   model: Types.oneOfType([Types.string, Types.number, Types.bool, Types.array, Types.shape({})]),

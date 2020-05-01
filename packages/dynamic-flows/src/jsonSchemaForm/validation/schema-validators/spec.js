@@ -17,8 +17,8 @@ describe('Given a library for validating json schema models', () => {
             minLength: 3,
           },
           c: {
-            const: true
-          }
+            const: true,
+          },
         },
         required: ['a', 'c'],
       };

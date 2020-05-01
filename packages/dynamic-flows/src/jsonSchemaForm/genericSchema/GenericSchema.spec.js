@@ -231,7 +231,8 @@ describe('Given a component for rendering any generic schema', () => {
   });
 
   describe('when a oneOf schema also has a type ', () => {
-    let oneOfComponent, basicTypeSchemaComponent;
+    let oneOfComponent;
+    let basicTypeSchemaComponent;
 
     beforeEach(() => {
       model = 'a';
