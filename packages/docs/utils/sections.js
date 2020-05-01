@@ -1,5 +1,5 @@
 export default [
   { title: 'Getting started', dir: '' },
-  { title: 'React Components', dir: 'components' },
-  { title: 'CSS Components', dir: 'css' },
+  { title: 'Styles', dir: 'styles' },
+  { title: 'Components', dir: 'components' },
 ];
