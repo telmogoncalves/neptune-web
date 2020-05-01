@@ -38,15 +38,19 @@ const OneOfSchema = (props) => {
     return schema.const || (schema.enum && schema.enum.length === 1);
   };
 
-  const getRadioOptions = (schemas) =>
-    schemas.map((schema, value) => {
-      return { value, label: schema.title };
-    });
+  const mapSchemaToOption = (schema, index) => {
+    return {
+      value: index,
+      label: schema.title,
+      secondary: schema.description,
+      disabled: schema.disabled,
+    };
+  };
 
   const [schemaIndex, setSchemaIndex] = useState(getActiveSchemaIndex(props.schema, props.model));
   const [models, setModels] = useState(getModelPartsForSchemas(props.model, props.schema.oneOf));
 
-  const options = getRadioOptions(props.schema.oneOf);
+  const options = props.schema.oneOf.map(mapSchemaToOption);
 
   const controlType =
     props.schema.oneOf.length > 3 || props.schema.control === 'select' ? 'select' : 'radio';
