@@ -7,7 +7,7 @@ import Popover from '../popover';
 
 import './Summary.css';
 
-const Summary = ({ className, icon, title, help, body }) => (
+const Summary = ({ className, icon, title, help, content }) => (
   <div className={classNames('summary', className)}>
     <div className="summary__main">
       <div className="summary__icon m-r-2">{icon}</div>
@@ -22,14 +22,14 @@ const Summary = ({ className, icon, title, help, body }) => (
         </div>
       )}
     </div>
-    {body && <div className="summary__body m-t-1">{body}</div>}
+    {content && <div className="summary__content m-t-1 m-l-5">{content}</div>}
   </div>
 );
 
 Summary.propTypes = {
   icon: Types.node.isRequired,
   title: Types.node.isRequired,
-  body: Types.node,
+  content: Types.node,
   help: Types.shape({
     title: Types.node,
     content: Types.node.isRequired,
@@ -38,7 +38,7 @@ Summary.propTypes = {
 };
 
 Summary.defaultProps = {
-  body: null,
+  content: null,
   help: null,
   className: null,
 };

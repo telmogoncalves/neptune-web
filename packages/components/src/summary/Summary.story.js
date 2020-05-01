@@ -32,7 +32,7 @@ export const basic = () => {
       <Summary
         icon={<HomeIcon size="md" />}
         title="You entered your card delivery address"
-        body={
+        content={
           <>
             Flat 3 Chaplin House, Shepperton Road
             <br />

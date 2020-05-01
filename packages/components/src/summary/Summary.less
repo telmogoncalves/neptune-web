@@ -1,4 +1,6 @@
-@import 'bootstrap/less/variables.less';
+@import '@transferwise/neptune-css/src/less/variables/_colors.less';
+@import '@transferwise/neptune-css/src/less/variables/_spacing.less';
+@import '@transferwise/neptune-css/src/less/variables/_typography.less';
 
 .summary {
   &__main {
@@ -15,7 +17,7 @@
     height: 16px;
 
     .tw-icon {
-      color: @brand-light-blue;
+      color: var(--brand-light-blue);
     }
 
     [data-toggle='popover']:not(.btn) {
@@ -25,12 +27,11 @@
     }
   }
 
-  &__body {
-    margin-left: @spacer * 5;
-    font-size: @font-size-small;
+  &__content {
+    font-size: var(--font-size-small);
   }
 
   & + .summary {
-    margin-top: @spacer * 3;
+    margin-top: calc(var(--spacer) * 4);
   }
 }

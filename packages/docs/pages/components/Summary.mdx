@@ -1,0 +1,17 @@
+
+import { Summary } from '@transferwise/components';
+import MoneyIcon from '@transferwise/icons/react/money';
+import IdIcon from '@transferwise/icons/react/id';
+import HomeIcon from '@transferwise/icons/react/home';
+
+import { LiveEditorBlock, GeneratePropsTable } from '../../utils';
+import code from '../../liveEditorCode/summary.code';
+
+<div>
+  <LiveEditorBlock code={code} scope={{ Summary, MoneyIcon, IdIcon, HomeIcon }} />
+  <GeneratePropsTable componentName="Summary" />
+</div>
+
+export const meta = {
+  name: 'Summary',
+};
