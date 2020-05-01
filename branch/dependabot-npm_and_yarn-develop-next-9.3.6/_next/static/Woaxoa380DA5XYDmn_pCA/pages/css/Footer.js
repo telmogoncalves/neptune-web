@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[58],{"U+8U":function(n,o,w){(window.__NEXT_P=window.__NEXT_P||[]).push(["/css/Footer",function(){return w("qnVf")}])}},[["U+8U",0,1,3]]]);
