@@ -72,7 +72,7 @@
     "gulp-print": "^5.0.2",
     "husky": "^4.2.5",
     "jest": "24.8.0",
-    "jest-cli": "24.8.0",
+    "jest-cli": "25.5.3",
     "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^9.4.2",
     "lodash.times": "^4.3.2",
