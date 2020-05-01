@@ -52,7 +52,7 @@
     "react-live": "^2.2.2",
     "rehype-slug": "^3.0.0",
     "husky": "^4.2.5",
-    "lint-staged": "^9.4.2",
+    "lint-staged": "^10.2.2",
     "deploy-directory-on-branch-to-gh-pages": "^0.2.5"
   },
   "devDependencies": {

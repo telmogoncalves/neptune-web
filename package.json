@@ -41,7 +41,7 @@
     "prop-types": "^15.6.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "lint-staged": "^9.4.2"
+    "lint-staged": "^10.2.2"
   },
   "scripts": {
     "setup": "yarn install && yarn build",
