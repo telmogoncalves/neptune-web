@@ -3,7 +3,7 @@ import Types from 'prop-types';
 
 import GenericSchema from '../genericSchema';
 import { RadioGroup, Select } from '@transferwise/components';
-// ,
+
 import { getValidModelParts } from '../validation/valid-model';
 import { isValidSchema } from '../validation/schema-validators';
 
