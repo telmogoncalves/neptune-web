@@ -13,14 +13,15 @@
     "select": {
       "type": "integer",
       "title": "Select",
+      "control": "select",
       "oneOf": [
         {
           "title": "One",
-          "enum": [1]
+          "const": 1
         },
         {
           "title": "Two",
-          "enum": [2]
+          "const": 2
         }
       ]
     }

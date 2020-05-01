@@ -11,11 +11,11 @@ const basicTypes = ['string', 'number', 'integer', 'boolean'];
 const GenericSchemaForm = props => {
   const { schema } = props;
 
-  const isBasicType = basicTypes.indexOf(schema.type) >= 0 || !!schema.enum || !!schema.const;
   const isObject = schema.type === 'object';
   const isOneOf = !!schema.oneOf;
   const isAllOf = !!schema.allOf;
-
+  const isBasicType = !isOneOf && (basicTypes.indexOf(schema.type) >= 0 || !!schema.enum || !!schema.const);
+  
   return (
     <>
       {isBasicType && <BasicTypeSchema {...props} />}

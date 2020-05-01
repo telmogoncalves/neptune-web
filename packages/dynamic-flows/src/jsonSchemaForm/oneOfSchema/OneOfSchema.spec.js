@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import OneOfSchema from '.';
 
 import GenericSchema from '../genericSchema/';
-import { RadioGroup } from '@transferwise/components';
+import { RadioGroup, Select } from '@transferwise/components';
 
 describe('Given a oneOfSchema component', () => {
   let component;
@@ -181,6 +181,32 @@ describe('Given a oneOfSchema component', () => {
 
     it('should render the schema using a GenericSchema', () => {
       expect(component.find(GenericSchema)).toHaveLength(1);
+    });
+  });
+
+
+  describe('when many schemas are supplied', () => {
+    beforeEach(() => {
+      schema = {
+        title: 'Choose schema',
+        oneOf: [
+          { title: 'One', const: 1 },
+          { title: 'Two', const: 2 },
+          { title: 'Three', const: 3 },
+          { title: 'Four', const: 4 }
+        ],
+      };
+
+      props = { schema, model, errors, locale, onChange, submitted, translations };
+      component = shallow(<OneOfSchema {...props} />);
+    });
+
+    it('should render a select box to choose between schemas', () => {
+      expect(component.find(Select)).toHaveLength(1);
+    });
+
+    it('should not render a radio groups', () => {
+      expect(component.find(RadioGroup)).toHaveLength(0);
     });
   });
 });

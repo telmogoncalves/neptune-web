@@ -209,5 +209,10 @@ describe('Given a component for rendering basic type schemas', () => {
     it('should call the onChange handler with the const ', () => {
       expect(onChange).toHaveBeenCalledWith(enumSchema.enum[0], enumSchema);
     });
+    
+    it('should not show any label or control ', () => {
+      expect(component.find('label').length).toBe(0);
+      expect(component.find(SchemaFormControl).length).toBe(0);
+    });
   });
 });

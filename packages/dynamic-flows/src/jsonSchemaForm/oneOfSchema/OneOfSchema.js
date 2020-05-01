@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Types from 'prop-types';
 
 import GenericSchema from '../genericSchema';
-import { RadioGroup } from '@transferwise/components';
-
+import { RadioGroup, Select } from '@transferwise/components';
+// ,
 import { getValidModelParts } from '../validation/valid-model';
 import { isValidSchema } from '../validation/schema-validators';
 
@@ -25,7 +25,17 @@ const OneOfSchema = (props) => {
 
   const onSchemaChange = (index) => {
     setSchemaIndex(index);
-    props.onChange(models[index], props.schema.oneOf[index]);
+
+    const newSchema = props.schema.oneOf[index];
+
+    // const schemas broadcast a change automatically
+    if (!isConstSchema(newSchema)) {
+      props.onChange(models[index], newSchema);
+    }
+  };
+
+  const isConstSchema = (schema) => {
+    return schema.const || (schema.enum && schema.enum.length === 1);
   };
 
   const getRadioOptions = (schemas) =>
@@ -34,10 +44,12 @@ const OneOfSchema = (props) => {
     });
 
   const [schemaIndex, setSchemaIndex] = useState(getActiveSchemaIndex(props.schema, props.model));
-
   const [models, setModels] = useState(getModelPartsForSchemas(props.model, props.schema.oneOf));
 
   const options = getRadioOptions(props.schema.oneOf);
+
+  const controlType =
+    props.schema.oneOf.length > 3 || props.schema.control === 'select' ? 'select' : 'radio';
 
   return (
     <div>
@@ -45,12 +57,21 @@ const OneOfSchema = (props) => {
 
       {props.schema.oneOf.length > 1 && (
         <div className="m-b-3">
-          <RadioGroup
-            selectedValue={schemaIndex}
-            radios={options}
-            name="radio-group"
-            onChange={onSchemaChange}
-          />
+          { controlType === 'radio' && (
+            <RadioGroup
+              selectedValue={schemaIndex}
+              radios={options}
+              name="radio-group"
+              onChange={onSchemaChange}
+            />
+          ) }
+          { controlType === 'select' && (
+            <Select
+              selected={options[schemaIndex]}
+              options={options}
+              onChange={(selected) => onSchemaChange(selected.value)}
+            />
+          ) }
         </div>
       )}
 
